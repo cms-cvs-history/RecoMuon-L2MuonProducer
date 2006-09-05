@@ -2,14 +2,15 @@ include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorAl
 include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorOpposite.cfi"
 include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorAny.cfi"
 
+include "RecoMuon/TrackingTools/data/MuonServiceProxy.cff"
 
-#include "Recomuon/TrackingTools/data/MuonTrajectoryUpdator.cfi"
-
-module L2Muon = L2MuonProducer {
+module l2Muons = L2MuonProducer {
     untracked string MuonSeedCollectionLabel = "L1MuonSeed"
     
     string TrackLoaderPropagatorName = "SteppingHelixPropagatorAny"
     
+    using MuonServiceProxy
+
     PSet STATrajBuilderParameters = {
 	
 	untracked bool DoBackwardRefit = true
@@ -22,8 +23,8 @@ module L2Muon = L2MuonProducer {
 	    bool EnableCSCMeasurement = true
 	    bool EnableRPCMeasurement = true
 	    
-	    string PropagationDirection = "alongMomentum"
-	    #			string Propagator = "SteppingHelixPropagatorAlong"
+	    string FitDirection = "insideOut"
+	    # string Propagator = "SteppingHelixPropagatorAlong"
 	    string Propagator = "SteppingHelixPropagatorAny"
 	    string NavigationType = "Standard"
 	    
@@ -45,8 +46,9 @@ module L2Muon = L2MuonProducer {
 	    bool EnableRPCMeasurement = true
 	    
 	    string BWSeedType = "fromGenerator"
+	    string FitDirection = "outsideIn"
 	    string PropagationDirection = "oppositeToMomentum"
-	    #			string Propagator = "SteppingHelixPropagatorOpposite"	
+	    # string Propagator = "SteppingHelixPropagatorOpposite"	
 	    string Propagator = "SteppingHelixPropagatorAny"	
 	    string NavigationType = "Standard"
 	    
