@@ -1,0 +1,3 @@
+module L2MuonCandidates = L2MuonCandidateProducer {
+	untracked string StandAloneCollectionLabel = "L2Muons"
+}
