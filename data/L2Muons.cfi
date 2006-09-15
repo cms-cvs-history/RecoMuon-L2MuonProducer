@@ -1,0 +1,63 @@
+module L2Muons = L2MuonProducer {
+    InputTag InputObjects = L2MuonSeeds
+    
+    string TrackLoaderPropagatorName = "SteppingHelixPropagatorAny"
+    
+    using MuonServiceProxy
+
+    PSet L2TrajBuilderParameters = {
+	
+	bool DoBackwardRefit = true
+	bool DoSmoothing = false
+
+	double EtaMaxAllowed = 2.5
+	
+	PSet RefitterParameters = {
+	    
+	    bool EnableDTMeasurement = true
+	    bool EnableCSCMeasurement = true
+	    bool EnableRPCMeasurement = true
+	    
+	    string FitDirection = "insideOut"
+	    # string Propagator = "SteppingHelixPropagatorAlong"
+	    string Propagator = "SteppingHelixPropagatorAny"
+	    string NavigationType = "Standard"
+	    
+	    double MaxChi2 = 1000 #25.0
+	    double NumberOfSigma = 3.0 
+	    
+	    # when the updator will go in the ES this will des
+	    PSet MuonTrajectoryUpdatorParameters = {
+		
+		double MaxChi2 = 1000 #25.0
+		int32 Granularity = 0
+	    }	
+	}
+	
+	PSet BWFilterParameters = {
+	    
+	    bool EnableDTMeasurement = true
+	    bool EnableCSCMeasurement = true
+	    bool EnableRPCMeasurement = true
+	    
+	    string BWSeedType = "fromGenerator"
+	    string FitDirection = "outsideIn"
+	    string PropagationDirection = "oppositeToMomentum"
+	    # string Propagator = "SteppingHelixPropagatorOpposite"	
+	    string Propagator = "SteppingHelixPropagatorAny"	
+	    string NavigationType = "Standard"
+	    
+	    double MaxChi2 = 25.0
+	    double NumberOfSigma = 3.0
+	    
+	    # when the updator will go in the ES this will des
+	    PSet MuonTrajectoryUpdatorParameters = {
+		
+		double MaxChi2 = 25.0
+		int32 Granularity = 2
+	    }	
+	}
+	
+	PSet SmootherParameters = {}
+    }
+}
