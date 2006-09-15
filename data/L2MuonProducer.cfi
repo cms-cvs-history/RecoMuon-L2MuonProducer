@@ -11,7 +11,7 @@ module L2Muons = L2MuonProducer {
     
     using MuonServiceProxy
 
-    PSet STATrajBuilderParameters = {
+    PSet L2TrajBuilderParameters = {
 	
 	untracked bool DoBackwardRefit = true
 	
