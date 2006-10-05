@@ -6,6 +6,8 @@ module L2Muons = L2MuonProducer {
     using MuonServiceProxy
 
     PSet L2TrajBuilderParameters = {
+
+	string NavigationType = "Standard"
 	
 	bool DoBackwardRefit = true
 	bool DoSmoothing = false
@@ -19,14 +21,12 @@ module L2Muons = L2MuonProducer {
 	    bool EnableRPCMeasurement = true
 	    
 	    string FitDirection = "insideOut"
-	    # string Propagator = "SteppingHelixPropagatorAlong"
+	    
 	    string Propagator = "SteppingHelixPropagatorAny"
-	    string NavigationType = "Standard"
 	    
 	    double MaxChi2 = 1000 #25.0
 	    double NumberOfSigma = 3.0 
 	    
-	    # when the updator will go in the ES this will des
 	    PSet MuonTrajectoryUpdatorParameters = {
 		
 		double MaxChi2 = 1000 #25.0
@@ -42,15 +42,12 @@ module L2Muons = L2MuonProducer {
 	    
 	    string BWSeedType = "fromGenerator"
 	    string FitDirection = "outsideIn"
-	    string PropagationDirection = "oppositeToMomentum"
-	    # string Propagator = "SteppingHelixPropagatorOpposite"	
+
 	    string Propagator = "SteppingHelixPropagatorAny"	
-	    string NavigationType = "Standard"
 	    
 	    double MaxChi2 = 25.0
 	    double NumberOfSigma = 3.0
 	    
-	    # when the updator will go in the ES this will des
 	    PSet MuonTrajectoryUpdatorParameters = {
 		
 		double MaxChi2 = 25.0
