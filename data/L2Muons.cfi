@@ -7,7 +7,7 @@ module L2Muons = L2MuonProducer {
     PSet TrackLoaderParameters = {
 	string TrackLoaderPropagator = "SteppingHelixPropagatorAny"
 	bool VertexConstraint = true
-	untracked bool PutTrajectoryIntoEvent = false
+	untracked bool PutTrajectoryIntoEvent = true
     }
     
     PSet L2TrajBuilderParameters = {
