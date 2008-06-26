@@ -16,7 +16,7 @@ module L2Muons = L2MuonProducer {
 	string SeedPosition = "in"
 	# a precise propagation direction can be choosen accordingly with the 
 	# above seed position
-	string SeedPropagator = "SteppingHelixPropagatorAny"
+	string SeedPropagator = "SteppingHelixPropagatorL2Any"
 
 	string NavigationType = "Standard"
 	
@@ -34,7 +34,7 @@ module L2Muons = L2MuonProducer {
 	    
 	    string FitDirection = "insideOut"
 	    
-	    string Propagator = "SteppingHelixPropagatorAny"
+	    string Propagator = "SteppingHelixPropagatorL2Any"
 	    
 	    double MaxChi2 = 1000 #25.0
 	    double NumberOfSigma = 3.0 
@@ -60,7 +60,7 @@ module L2Muons = L2MuonProducer {
 	    string BWSeedType = "fromGenerator"
 	    string FitDirection = "outsideIn"
 	    
-	    string Propagator = "SteppingHelixPropagatorAny"	
+	    string Propagator = "SteppingHelixPropagatorL2Any"	
 	    
 	    double MaxChi2 = 25.0
 	    double NumberOfSigma = 3.0
