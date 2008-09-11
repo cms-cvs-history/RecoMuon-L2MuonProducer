@@ -1,3 +1,0 @@
-module L2MuonCandidates = L2MuonCandidateProducer {
-    InputTag InputObjects = L2Muons:UpdatedAtVtx
-}
